@@ -466,7 +466,7 @@ class Four_legged_Robot_Simulator
   */
   double m_foot_width;
   /*!
-  *
+  * 足裏の高さ
   * - Name: foot_height foot_height
   * - DefaultValue: 0.005
   */
