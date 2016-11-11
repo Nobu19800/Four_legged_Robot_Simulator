@@ -466,7 +466,7 @@ class Four_legged_Robot_Simulator
   */
   double m_foot_width;
   /*!
-  * 足裏の高さ
+  *
   * - Name: foot_height foot_height
   * - DefaultValue: 0.005
   */
@@ -490,13 +490,13 @@ class Four_legged_Robot_Simulator
 
   // DataInPort declaration
   // <rtc-template block="inport_declare">
-  RTC::TimedFloatSeq m_servo;
+  RTC::TimedDoubleSeq m_servo;
   /*!
    * 関節角度
    * - Type: RTC::TimedDoubleSeq
    * - Number: 12
    */
-  InPort<RTC::TimedFloatSeq> m_servoIn;
+  InPort<RTC::TimedDoubleSeq> m_servoIn;
   
   // </rtc-template>
 
