@@ -424,3 +424,32 @@ void Leg_Object::setLowerLimitJoint(double l0, double l1, double l2)
 	LowerLimitJoint[1] = l1;
 	LowerLimitJoint[2] = l2;
 }
+
+
+/**
+*@brief ŠÖßŠp“x‚Ìİ’è
+*@param t ŠÖßŠp“x
+*@return true‚Ìê‡‚Í‰Â“®”ÍˆÍŠO
+*/
+bool Leg_Object::setAngle(std::vector<double> t)
+{
+	bool  ret = false;
+	for (int i = 0; i < 3; i++)
+	{
+		if (UpperLimitJoint[i] < t[i])
+		{
+			theta[i] = UpperLimitJoint[i];
+			ret = true;
+		}
+		else if (LowerLimitJoint[i] > t[i])
+		{
+			theta[i] = UpperLimitJoint[i];
+			ret = true;
+		}
+		else
+		{
+			theta[i] = t[i];
+		}
+	}
+	return ret;
+}
