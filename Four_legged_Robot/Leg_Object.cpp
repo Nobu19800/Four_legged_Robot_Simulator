@@ -368,14 +368,25 @@ Vector3d Leg_Object::calcKinematics(std::vector<double> the)
 /**
 *@brief 回転速度、ステップ数の再設定
 *@param rv 回転速度
+*@param len 回転中心までの長さ
 *@param mc ステップ数
 */
 void Leg_Object::update_status(double rv, int mc)
 {
+
 	count = count * mc / max_count;
 	offset_count = offset_count * mc / max_count;
+
+	rotete_vel = rotete_vel * max_count / mc;
+	
 	max_count = mc;
-	rotete_vel = rv;
+	/*
+	if (rv*rotete_vel >= 0)rotete_vel = rv;
+	else rotete_vel = -rv;
+	*/
+	
+	//rotate_len = len;
+	//std::cout << count << "\t" << offset_count << "\t" << max_count << std::endl;
 }
 
 /**

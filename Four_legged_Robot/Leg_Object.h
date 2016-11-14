@@ -90,6 +90,7 @@ public:
 	/**
 	*@brief 回転速度、ステップ数の再設定
 	*@param rv 回転速度
+	*@param len 回転中心までの長さ
 	*@param mc ステップ数
 	*/
 	void update_status(double rv, int mc);
